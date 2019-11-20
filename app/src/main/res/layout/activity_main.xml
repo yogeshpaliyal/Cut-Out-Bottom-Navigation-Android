@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -8,60 +9,57 @@
     android:fitsSystemWindows="true">
 
 
-   <FrameLayout
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintBottom_toBottomOf="parent"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:id="@+id/frameLayout"/>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cordinatorBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/cordinatorBottom">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
-            android:layout_marginTop="60dp"
             android:id="@+id/bottom_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginTop="60dp"
+            android:paddingBottom="0dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             app:contentInsetStart="0dp"
             app:contentInsetStartWithNavigation="0dp"
-            app:fabCradleVerticalOffset="0dp"
-            app:fabCradleMargin="10dp"
-            android:paddingBottom="0dp"
             app:fabAlignmentMode="center"
-            app:fabCradleRoundedCornerRadius="25dp">
+            app:fabCradleMargin="10dp"
+            app:fabCradleRoundedCornerRadius="25dp"
+            app:fabCradleVerticalOffset="0dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/nav_view"
-                android:background="@drawable/background_transparent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
+                android:background="@drawable/background_transparent"
                 app:labelVisibilityMode="selected"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:menu="@menu/menu_bottom"/>
+                app:menu="@menu/menu_bottom" />
         </com.google.android.material.bottomappbar.BottomAppBar>
 
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
-            android:id="@+id/btnSell"
-            android:src="@drawable/ic_add_black_24dp"
             android:layout_height="wrap_content"
-            app:layout_anchor="@id/bottom_bar"/>
+            android:src="@drawable/ic_add_black_24dp"
+            app:layout_anchor="@id/bottom_bar" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
